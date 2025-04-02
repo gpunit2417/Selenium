@@ -45,7 +45,20 @@ driver.get('https://testautomationpractice.blogspot.com/')
 
 # colors = Select(driver.find_element(By.ID, 'colors')).select_by_index(4)
 
+# time.sleep(2)
+# animals = Select(driver.find_element(By.ID, 'animals')).select_by_value("cheetah")
+
+# time.sleep(2)
+# date1 = driver.find_element(By.ID, 'datepicker')
+# date1.click()
+
+# time.sleep(4)
+# date2 = driver.find_element(By.ID, 'txtDate')
+# date2.click()
+
+
 time.sleep(2)
-animals = Select(driver.find_element(By.ID, 'animals')).select_by_value("cheetah")
+button = driver.find_element(By.CLASS_NAME, 'submit-btn')
+button.click()
 
 time.sleep(5)
