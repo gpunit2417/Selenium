@@ -36,6 +36,7 @@ driver.get('https://testautomationpractice.blogspot.com/')
 
 time.sleep(2)
 # country = Select(driver.find_element(By.ID, 'country')).select_by_index(4)
-country = Select(driver.find_element(By.ID, 'country')).select_by_visible_text("France")
+# country = Select(driver.find_element(By.ID, 'country')).select_by_visible_text("France")
+country = Select(driver.find_element(By.ID, 'country')).select_by_value('canada')
 
 time.sleep(12)
