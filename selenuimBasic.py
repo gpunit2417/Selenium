@@ -56,9 +56,19 @@ driver.get('https://testautomationpractice.blogspot.com/')
 # date2 = driver.find_element(By.ID, 'txtDate')
 # date2.click()
 
+# time.sleep(2)
+# startDate = driver.find_element(By.ID, 'start-date')
+# startDate.click()
 
-time.sleep(2)
-button = driver.find_element(By.CLASS_NAME, 'submit-btn')
-button.click()
+# time.sleep(2)
+# endDate = driver.find_element(By.ID, "end-date")
+# endDate.click()
+
+# time.sleep(2)
+# button = driver.find_element(By.CLASS_NAME, 'submit-btn')
+# button.click()
+
+# time.sleep(2)
+# singleFileInput = driver.find_element(By.ID, 'singleFileInput').send_keys(r"G:\MY RESUMES\Punit Resume Updated.pdf")
 
 time.sleep(5)
