@@ -34,7 +34,7 @@ driver.get('https://testautomationpractice.blogspot.com/')
 # day.click()
 
 
-time.sleep(2)
+# time.sleep(2)
 # country = Select(driver.find_element(By.ID, 'country')).select_by_index(4)
 # country = Select(driver.find_element(By.ID, 'country')).select_by_visible_text("France")
 # country = Select(driver.find_element(By.ID, 'country')).select_by_value('canada')
@@ -42,4 +42,10 @@ time.sleep(2)
 
 # country = Select(driver.find_element(By.ID, 'country')).select_by_visible_text("france")      #error as France not france is present
 
-time.sleep(12)
+
+# colors = Select(driver.find_element(By.ID, 'colors')).select_by_index(4)
+
+time.sleep(2)
+animals = Select(driver.find_element(By.ID, 'animals')).select_by_value("cheetah")
+
+time.sleep(5)
