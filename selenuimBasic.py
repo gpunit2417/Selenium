@@ -19,4 +19,13 @@ time.sleep(2)
 Phone = driver.find_element(By.ID, "phone")
 Phone.send_keys("9896414101")
 
-time.sleep(10)
+time.sleep(2)
+
+address = driver.find_element(By.ID, "textarea")
+address.send_keys("Vpo Barwala, near grain market")
+
+time.sleep(2)
+gender = driver.find_element(By.XPATH, "//*[@id='post-body-1307673142697428135']/div[3]/div[1]")
+gender.click()
+
+time.sleep(12)
