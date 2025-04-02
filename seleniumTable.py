@@ -57,6 +57,42 @@
 # driver.quit()
 
 
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+
+# # Initialize WebDriver
+# driver = webdriver.Chrome()
+
+# # Open the webpage (Replace with the actual URL containing the table)
+# driver.get('https://testautomationpractice.blogspot.com/')
+
+# # Locate the table
+# table = driver.find_element(By.TAG_NAME, "table")
+
+# # Fetch the headers (th elements)
+# headers = table.find_elements(By.TAG_NAME, "th")
+# header_names = [header.text for header in headers]  # Extract text from headers
+
+# # Choose the column index (e.g., Price column → index 3)
+# column_name = "Price"  # Change this to the column you want to extract
+# column_index = header_names.index(column_name)  # Find the index of the chosen column
+
+# # Print the column name
+# print(f"{column_name} Column:")
+# print("-" * 20)
+
+# # Fetch all rows from the table (excluding headers)
+# rows = table.find_elements(By.TAG_NAME, "tr")[1:]  # Skip the header row
+
+# # Iterate through each row and print only the selected column
+# for row in rows:
+#     columns = row.find_elements(By.TAG_NAME, "td")  # Fetch all columns in the row
+#     print(columns[column_index].text)  # Print the specific column
+
+# # Close the browser
+# driver.quit()
+
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -69,25 +105,21 @@ driver.get('https://testautomationpractice.blogspot.com/')
 # Locate the table
 table = driver.find_element(By.TAG_NAME, "table")
 
-# Fetch the headers (th elements)
-headers = table.find_elements(By.TAG_NAME, "th")
-header_names = [header.text for header in headers]  # Extract text from headers
-
-# Choose the column index (e.g., Price column → index 3)
-column_name = "Price"  # Change this to the column you want to extract
-column_index = header_names.index(column_name)  # Find the index of the chosen column
-
-# Print the column name
-print(f"{column_name} Column:")
-print("-" * 20)
-
 # Fetch all rows from the table (excluding headers)
 rows = table.find_elements(By.TAG_NAME, "tr")[1:]  # Skip the header row
 
-# Iterate through each row and print only the selected column
-for row in rows:
-    columns = row.find_elements(By.TAG_NAME, "td")  # Fetch all columns in the row
-    print(columns[column_index].text)  # Print the specific column
+# Choose the row index (e.g., 3rd row → index 2)
+row_index = 2  # Change this value to select a different row
+
+# Fetch the specific row
+selected_row = rows[row_index]
+
+# Extract and print all columns from the selected row
+columns = selected_row.find_elements(By.TAG_NAME, "td")
+row_data = [column.text for column in columns]
+
+# Print the row data
+print(f"Row {row_index + 1} Data: {row_data}")
 
 # Close the browser
 driver.quit()
