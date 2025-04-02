@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 import time
 
 driver = webdriver.Chrome()
@@ -31,5 +32,9 @@ day.click()
 time.sleep(2)
 day = driver.find_element(By.XPATH, '//*[@id="post-body-1307673142697428135"]/div[4]/div[5]')
 day.click()
+
+
+time.sleep(2)
+country = Select(driver.find_element(By.ID, 'country')).select_by_index(4)
 
 time.sleep(12)
