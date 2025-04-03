@@ -1,4 +1,6 @@
 import pandas as pd
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 df = pd.read_csv("C:\\Users\\HP\\Desktop\\data.csv")
 
@@ -21,3 +23,10 @@ df = pd.read_csv("C:\\Users\\HP\\Desktop\\data.csv")
 
 # data3 = df.iat[2, 1]
 # print(data3)
+
+dataToEnter = df.iat[2, 0]
+
+driver = webdriver.Chrome()
+driver.get("https://testautomationpractice.blogspot.com")
+
+name = driver.find_element(By.ID, 'name').send_keys(dataToEnter)
