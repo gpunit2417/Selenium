@@ -1,19 +1,44 @@
 # print the entire table without headers
 
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+# import time
+
+# driver = webdriver.Chrome()
+# driver.get("https://testautomationpractice.blogspot.com")
+
+# table = driver.find_element(By.ID, 'taskTable')
+
+# rows = table.find_elements(By.TAG_NAME, 'tr')
+
+# for row in rows:
+#     columns = row.find_elements(By.TAG_NAME, 'td')
+#     row_data = [col.text for col in columns]
+#     print(" | ".join(row_data))
+
+# driver.quit()
+
+
+# print the entire table with headers as well
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
 
-driver = webdriver.Chrome()
-driver.get("https://testautomationpractice.blogspot.com")
+drive = webdriver.Chrome()
+drive.get("https://testautomationpractice.blogspot.com")
 
-table = driver.find_element(By.ID, 'taskTable')
+table = drive.find_element(By.ID, 'taskTable')
 
-rows = table.find_elements(By.TAG_NAME, 'tr')
+header = table.find_elements(By.TAG_NAME, 'th')
+header_name = [head.text for head in header]
+print(" | ".join(header_name))
+print('-' * 30)
+
+rows = table.find_elements(By.TAG_NAME, 'tr')[1:]
 
 for row in rows:
     columns = row.find_elements(By.TAG_NAME, 'td')
     row_data = [col.text for col in columns]
     print(" | ".join(row_data))
 
-driver.quit()
+drive.quit()
