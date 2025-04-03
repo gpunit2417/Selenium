@@ -21,24 +21,45 @@
 
 # print the entire table with headers as well
 
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+
+# drive = webdriver.Chrome()
+# drive.get("https://testautomationpractice.blogspot.com")
+
+# table = drive.find_element(By.ID, 'taskTable')
+
+# header = table.find_elements(By.TAG_NAME, 'th')
+# header_name = [head.text for head in header]
+# print(" | ".join(header_name))
+# print('-' * 30)
+
+# rows = table.find_elements(By.TAG_NAME, 'tr')[1:]
+
+# for row in rows:
+#     columns = row.find_elements(By.TAG_NAME, 'td')
+#     row_data = [col.text for col in columns]
+#     print(" | ".join(row_data))
+
+# drive.quit()
+
+
+#  print the specific row of the table
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-drive = webdriver.Chrome()
-drive.get("https://testautomationpractice.blogspot.com")
+driver = webdriver.Chrome()
+driver.get("https://testautomationpractice.blogspot.com")
 
-table = drive.find_element(By.ID, 'taskTable')
-
-header = table.find_elements(By.TAG_NAME, 'th')
-header_name = [head.text for head in header]
-print(" | ".join(header_name))
-print('-' * 30)
+table = driver.find_element(By.ID, 'taskTable')
 
 rows = table.find_elements(By.TAG_NAME, 'tr')[1:]
+row_index = 2
 
-for row in rows:
-    columns = row.find_elements(By.TAG_NAME, 'td')
-    row_data = [col.text for col in columns]
-    print(" | ".join(row_data))
+selected_row = rows[row_index]
 
-drive.quit()
+columns = selected_row.find_elements(By.TAG_NAME, 'td')
+row_data = [col.text for col in columns]
+
+print(f"The data in row index {row_index} is: {row_data}" )
